@@ -5,8 +5,12 @@ export class Board {
         this.container = document.getElementById(containerId);
         this.store = store;
         this.store.subscribe(() => {
-            if (window.location.pathname === '/') this.render();
-        });
+            const path = window.location.pathname;
+            // Проверяем, содержит ли путь название репозитория или является корнем
+            if (path.endsWith('/') || path.includes('index.html')) {
+                this.render();
+            }
+});
         
         this.columns = [
             { id: 0, name: 'Бэклог' },
