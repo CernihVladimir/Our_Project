@@ -25,6 +25,7 @@ export class Archive {
             <tr>
                 <td>${t.task_id}</td> 
                 <td>${t.name}</td>
+                <td>${t.date}</td>
                 <td>
                     <button class="delete-archive-btn" data-id="${t.task_id}">Удалить</button>
                 </td>
@@ -32,7 +33,7 @@ export class Archive {
         `).join('');
 
         if (archivedTasks.length === 0) {
-            tableRows = `<tr><td colspan="3" style="text-align:center; color:#888;">Архив пуст</td></tr>`;
+            tableRows = `<tr><td colspan"4" style="text-align:center; color:#888;">Архив пуст</td></tr>`;
         }
 
         this.container.innerHTML = `
@@ -43,7 +44,9 @@ export class Archive {
                         <tr>
                             <th>ID (UUID)</th>
                             <th>Название задачи</th>
+                            <th>Дата</th>
                             <th>Действие</th>
+                            
                         </tr>
                     </thead>
                     <tbody>

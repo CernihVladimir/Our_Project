@@ -20,7 +20,7 @@ export class Store {
             const newTask = {
                 task_id: crypto.randomUUID(), 
                 name: name,
-                date: new Date().toISOString().split('T'),
+                date: new Date().toISOString().replace('T', ' ').replace(/\.\d+Z$/, ''),
                 board_id: 1, 
                 column: columnId,
                 priority: 1
